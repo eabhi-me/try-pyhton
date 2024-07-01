@@ -32,7 +32,7 @@ print(reversed_string)
 
 last_three_elements = string[-3:]
 print(last_three_elements)
-
+word1 = input()
 ends_with_a = word1.endswith('a') or word1.endswith('A')
 
 word1 = "hello"

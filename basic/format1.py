@@ -3,6 +3,7 @@
 # day, month, year = int(dob[0:2]), int(dob[3:5]), int(dob[6:8]) # int, int, int: Get the correct parts from dob as int\n
 # ValueError: invalid literal for int() with base 10:
 
+import math
 
 
 age = int(input()) # int: Read a number as integer from standard input
