@@ -121,36 +121,71 @@
 
 
 
-class Employee:
-    raise_amount = 1.05  # Class attribute
+# class Employee:
+#     raise_amount = 1.05  # Class attribute
 
-    def __init__(self, name, salary):
-        self.name = name          # Instance attribute
-        self.salary = salary       # Instance attribute
+#     def __init__(self, name, salary):
+#         self.name = name          # Instance attribute
+#         self.salary = salary       # Instance attribute
 
-    def apply_raise(self):
-        self.salary = int(self.salary * Employee.raise_amount)
+#     def apply_raise(self):
+#         self.salary = int(self.salary * Employee.raise_amount)
 
-    @classmethod
-    def set_raise_amount(cls, amount):
-        cls.raise_amount = amount
+#     @classmethod
+#     def set_raise_amount(cls, amount):
+#         cls.raise_amount = amount
 
-    @staticmethod
-    def is_workday(day):
-        return day.weekday() < 5
+#     @staticmethod
+#     def is_workday(day):
+#         return day.weekday() < 5
 
-    def __str__(self):
-        return f"Employee(name={self.name}, salary={self.salary})"
+#     def __str__(self):
+#         return f"Employee(name={self.name}, salary={self.salary})"
 
-# Usage
-employee1 = Employee("John Doe", 50000)
-employee1.apply_raise()
-print(employee1)  # Output: Employee(name=John Doe, salary=52500)
+# # Usage
+# employee1 = Employee("John Doe", 50000)
+# employee1.apply_raise()
+# print(employee1)  # Output: Employee(name=John Doe, salary=52500)
 
-# Class method and static method usage
-Employee.set_raise_amount(1.10)
-print(Employee.raise_amount)  # Output: 1.10
+# # Class method and static method usage
+# Employee.set_raise_amount(1.10)
+# print(Employee.raise_amount)  # Output: 1.10
 
-import datetime
-my_date = datetime.date(2024, 11, 21)
-print(Employee.is_workday(my_date))  # Output: True or False depending on the day
+# import datetime
+# my_date = datetime.date(2024, 11, 21)
+# print(Employee.is_workday(my_date))  # Output: True or False depending on the day
+
+
+
+
+
+
+class Question:
+    def __init__(self, statement, marks):
+        self.statement = statement
+        self.marks = marks
+
+    def print_question(self):
+        print(self.statement)
+
+    def update_marks(self, marks):
+        self.marks = marks
+    
+    def getMark(self):
+        return self.marks
+
+q1 = Question("What is valeus of pi",1)
+print(q1.marks)
+
+class NAT(Question):
+    def __init__(self, statement, marks, answer):
+        super().__init__(statement, marks)
+        self.answer = answer
+
+    def update_answer(self, answer):
+        self.answer = answer
+
+n1 = NAT("2*8+6", 1,22)
+n1.print_question()
+print(n1.marks)
+print(n1.getMark())
