@@ -1,0 +1,23 @@
+import sys
+import os
+# import psycopg2
+file = open("text.txt","r")
+x = file.read()
+print(x)
+try:
+    connection = psycopg2.connect(
+        database=dbname, 
+        user=usrname,
+        password=pwd, 
+        host=address, 
+        port=portnum
+    )
+    cursor = connection.cursor()
+    query = "select first_name from students where id='{}'".format(x)
+    cursor.execute(query)
+    res = cursor.fetchall()
+except(Exception,psycopg2.DatabaseError) as error:
+    print(error)
+finally:
+    cursor.close()
+    connection.close()
